@@ -1,0 +1,57 @@
+/* Base */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* ✅ Fade-in for page sections */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ Hover lift for buttons */
+.btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(80, 90, 255, 0.3);
+}
+
+/* ✅ Soft glow on focus */
+.input-glow:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35);
+  border-color: #6366f1;
+}
+
+/* ✅ Micro animation on input focus */
+.input-glow {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.input-glow:focus {
+  transform: translateY(-1px);
+}
+
+/* ✅ Loading spinner */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.4);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Optional: disable button while loading */
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
